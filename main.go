@@ -2,15 +2,13 @@ package main
 
 import "fmt"
 
-var (
-	actorName    string = "Elizabeth sladen"
-	companion    string = "Sarah jane smith"
-	doctorNumber int    = 3
-	season       int    = 11
-)
-
 func main() {
 
-	fmt.Printf("%v, %T", actorName, actorName)
+	var i int = 42
+	fmt.Printf("%v, %T\n", i, i)
+
+	var j float32
+	j = float32(i) //converts i to float and assigns it to float
+	fmt.Printf("%v, %T\n", j, j)
 
 }
