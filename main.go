@@ -4,10 +4,10 @@ import "fmt"
 
 func main() {
 
-	n := 1 == 1
-	m := 1 == 2
+	var ages = [3]int{20, 25, 30}
+	fmt.Println(ages)
 
-	fmt.Printf("%v, %T", n, n)
-	fmt.Printf("%v, %T", m, m)
+	names := [4]string{"yoshi", "mario", "peach", "bowser"}
+	fmt.Println(names)
 
 }
