@@ -4,25 +4,27 @@ import "fmt"
 
 func main() {
 
-	//slices
-	var scores = []int{100, 42, 21, 43}
+	/*x := 0
+	for x < 5 {
+		fmt.Print(x, "\n")
+		x++
+	}*/
 
-	//fmt.Println(scores)
+	/*for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}*/
 
-	scores[2] = 332
+	names := []string{"osamede", "akonofua", "omokhomion", "this", "that"}
 
-	//fmt.Println(scores)
+	/*for i := 0; i < len(names); i++ {
 
-	scores = append(scores, 85) //append something to the end of a slice
+		fmt.Println(names[i])
 
-	//fmt.Println(scores)
+	}*/
 
-	//slice ranges
-	rangeOne := scores[1:3]  //range of 1 to 2
-	rangeTwo := scores[2:]   //from 2 to end
-	rangeThree := scores[:3] //from start to before 3
-	fmt.Println(rangeOne)
-	fmt.Println(rangeTwo)
-	fmt.Println(rangeThree)
+	for _, value := range names {
+		fmt.Println(value)
+	}
 
+	//dont forget the break and continue and label
 }
