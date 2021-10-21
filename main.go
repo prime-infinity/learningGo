@@ -4,10 +4,11 @@ import "fmt"
 
 func main() {
 
-	var ages = [...]int{20, 25, 30}
-	fmt.Println(ages)
+	a := [...]int{1, 2, 3}
+	b := a //copying arrays will literally copy the array
 
-	names := [...]string{"yoshi", "mario", "peach", "bowser"}
-	fmt.Println(names)
+	b[1] = 5
+	fmt.Println(a)
+	fmt.Println(b)
 
 }
