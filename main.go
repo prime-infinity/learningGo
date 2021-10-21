@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 
 	//strings
@@ -28,10 +26,16 @@ func main() {
 	fmt.Println(numOne, numTwo, numThree)*/
 
 	//floats
-	var floatOne float32 = 34.53
+	/*var floatOne float32 = 34.53
 	var floatTwo float64 = 332323.423
 	floatDefault := 2.3
 
-	fmt.Println(floatOne, floatTwo, floatDefault)
+	fmt.Println(floatOne, floatTwo, floatDefault)*/
+
+	/*var i int
+	i = 42*/
+	//var j int = 27
+	//k := 99
+	//fmt.Printf("%v, %T", j, j)
 
 }
