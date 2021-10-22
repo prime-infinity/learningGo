@@ -4,19 +4,20 @@ import "fmt"
 
 func main() {
 
-	age := 45
+	names := []string{"mario", "luigi", "yoshi", "peach", "bowser"}
 
-	fmt.Println(age <= 50)
-	fmt.Println(age >= 50)
-	fmt.Println(age == 45)
-	fmt.Println(age != 50)
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue //break out of current iteration of loop
+		}
 
-	if age < 30 { //if conditions do not need brackets in go
-		fmt.Println("age is less than 30")
-	} else if age > 40 {
-		fmt.Println("age is greater than 40")
-	} else {
-		//default catch clause
+		if index > 2 {
+			fmt.Println("breaking at pos", index)
+			break //breaks out of the loop entirely
+		}
+
+		fmt.Printf("the value at pos %v is %v \n", index, value)
 	}
 
 }
