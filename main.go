@@ -1,19 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func circleArea(r float64) float64 {
-	return 3.14 * r * r
+func getInitials(n string) (string, string) {
+
+	s := strings.ToUpper(n)
+
+	names := strings.Split(s, " ")
+
+	var initials []string
+	for _, v := range names {
+		initials = append(initials, v[:1]) //strings can also be treated as strings, so range can be used on them
+	}
+
+	if len(initials) > 1 {
+		return initials[0], initials[1] //return more than one values
+	}
+	return initials[0], "_"
+
 }
 
 func main() {
 
-	a1 := circleArea(10.5)
-	a2 := circleArea(15)
+	fn1, sn1 := getInitials("tifa lockhart") //getting the two return statements from strings
 
-	fmt.Println(a1)
-	fmt.Println(a2)
+	fmt.Println(fn1, sn1)
 
-	fmt.Printf("circle 1 is %0.2f \n and circle 2 is %0.2f ", a1, a2)
+	fn2, sn2 := getInitials("cloud strife")
+	fmt.Println(fn2, sn2)
+
+	fn3, sn3 := getInitials("osamede")
+	fmt.Println(fn3, sn3)
 
 }
