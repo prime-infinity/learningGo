@@ -2,27 +2,23 @@ package main
 
 import "fmt"
 
-func updateName(x *string) {
-	*x = "wedge"
-}
-
 func main() {
 
-	name := "tifa"
+	statePopulations := map[string]int{ //key value pairs must be of the same type
+		"califonia":    23423123,
+		"texas":        2324232,
+		"florida":      342323,
+		"new youk":     32312423,
+		"pennsylvania": 323124232,
+		"illinois":     333232,
+		"ohio":         12323232,
+	}
 
-	//updateName(name)
+	//fmt.Println(statePopulations)
 
-	//fmt.Println("memory address of name is:", &name) //referencing pointers
-
-	m := &name //referencing pointers
-
-	//fmt.Println("memory address ", m)
-
-	//fmt.Println("value at memory address is :", *m)
-
-	fmt.Println(name)
-	updateName(m)
-
-	fmt.Println(name)
+	for index, value := range statePopulations {
+		fmt.Println(index)
+		fmt.Println(value)
+	}
 
 }
