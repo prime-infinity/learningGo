@@ -4,27 +4,19 @@ import "fmt"
 
 func main() {
 
-	/*x := 0
-	for x < 5 {
-		fmt.Print(x, "\n")
-		x++
-	}*/
+	age := 45
 
-	/*for i := 0; i < 5; i++ {
-		fmt.Println(i)
-	}*/
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 45)
+	fmt.Println(age != 50)
 
-	names := []string{"osamede", "akonofua", "omokhomion", "this", "that"}
-
-	/*for i := 0; i < len(names); i++ {
-
-		fmt.Println(names[i])
-
-	}*/
-
-	for _, value := range names {
-		fmt.Println(value)
+	if age < 30 { //if conditions do not need brackets in go
+		fmt.Println("age is less than 30")
+	} else if age > 40 {
+		fmt.Println("age is greater than 40")
+	} else {
+		//default catch clause
 	}
 
-	//dont forget the break and continue and label
 }
