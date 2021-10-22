@@ -1,38 +1,17 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
-func getInitials(n string) (string, string) {
-
-	s := strings.ToUpper(n)
-
-	names := strings.Split(s, " ")
-
-	var initials []string
-	for _, v := range names {
-		initials = append(initials, v[:1]) //strings can also be treated as strings, so range can be used on them
-	}
-
-	if len(initials) > 1 {
-		return initials[0], initials[1] //return more than one values
-	}
-	return initials[0], "_"
-
-}
+var score = 99.5 //to export, remember, cannot use := at package level
 
 func main() {
 
-	fn1, sn1 := getInitials("tifa lockhart") //getting the two return statements from strings
+	sayHello("mario")
 
-	fmt.Println(fn1, sn1)
+	for _, v := range points {
+		fmt.Println(v)
+	}
 
-	fn2, sn2 := getInitials("cloud strife")
-	fmt.Println(fn2, sn2)
-
-	fn3, sn3 := getInitials("osamede")
-	fmt.Println(fn3, sn3)
+	showScore()
 
 }
