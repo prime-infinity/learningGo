@@ -2,33 +2,18 @@ package main
 
 import "fmt"
 
-func sayGreeting(n string) {
-	fmt.Printf("good morning %v \n", n)
-}
-
-func sayBye(n string) {
-	fmt.Printf("goodbye %v \n", n)
-}
-
-func cycleNames(n []string, f func(string)) {
-
-	/*for i := 0; i < len(n); i++ {
-
-	}*/ //the old way
-
-	for _, v := range n {
-		f(v)
-	}
-
+func circleArea(r float64) float64 {
+	return 3.14 * r * r
 }
 
 func main() {
 
-	/*sayGreeting("mario")
-	sayBye("luig")
-	sayGreeting("osamede")*/
+	a1 := circleArea(10.5)
+	a2 := circleArea(15)
 
-	sli := []string{"cloud", "tifa", "barret"}
+	fmt.Println(a1)
+	fmt.Println(a2)
 
-	cycleNames(sli, sayGreeting) //the "saygereeting function is not invoked here, but inside the func callingit"
+	fmt.Printf("circle 1 is %0.2f \n and circle 2 is %0.2f ", a1, a2)
+
 }
