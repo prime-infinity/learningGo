@@ -1,22 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
-//a simple struct can mix any type of data together
+func getInput(prompt string, r *bufio.Reader) (string, error) {
+	fmt.Print(prompt)
+	prompt, err := r.ReadString('\n')
+	return strings.TrimSpace(prompt), err
+}
+
+func createBill() bill {
+
+	reader := bufio.NewReader(os.Stdin)
+
+	/*fmt.Print("create a new bill name: ")
+	name = strings.TrimSpace(name)*/
+
+	name, _ := getInput("create a new bill name:   ", reader)
+
+	b := newBill(name)
+	fmt.Println("created the bill - ", b.name)
+
+	return b
+
+}
 
 func main() {
 
-	//structs are like advanced maps
-	//structs are custom types
+	myBill := createBill()
 
-	myBill := newBill("osamede's bill")
-
-	myBill.updateTip(10)
-	myBill.addItems("sweet pie", 1000)
-	myBill.addItems("pie", 10)
-	myBill.addItems("onion soup", 100)
-	myBill.addItems("cofee", 5)
-
-	fmt.Println(myBill.format())
+	fmt.Println(myBill)
 
 }
