@@ -10,6 +10,7 @@ func main() {
 	//structs are custom types
 
 	myBill := newBill("osamede's bill")
-	fmt.Println(myBill)
+
+	fmt.Println(myBill.format())
 
 }
