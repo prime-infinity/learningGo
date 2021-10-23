@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 //note that the "biil" is now a type onits own and can be used as return in functions
 type bill struct {
@@ -62,4 +65,15 @@ func (b *bill) updateTip(t float64) {
 //function to add items to bill struct
 func (b *bill) addItems(name string, price float64) {
 	b.items[name] = price
+}
+
+//save bill
+func (b *bill) save() {
+	data := []byte(b.format())
+
+	err := os.WriteFile("bill/"+b.name+".txt", data, 0644)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("bill was saved to file")
 }

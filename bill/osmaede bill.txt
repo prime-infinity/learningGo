@@ -1,0 +1,7 @@
+Biill breakdown: 
+proficcency:              ... $100 
+consistency:              ... $99 
+the forces:               ... $121212 
+desire:                   ... $1.212123e+06 
+tip:                      ... $3333 
+total:                    ...$1336867.00
