@@ -17,9 +17,6 @@ func createBill() bill {
 
 	reader := bufio.NewReader(os.Stdin)
 
-	/*fmt.Print("create a new bill name: ")
-	name = strings.TrimSpace(name)*/
-
 	name, _ := getInput("create a new bill name:   ", reader)
 
 	b := newBill(name)
@@ -29,10 +26,17 @@ func createBill() bill {
 
 }
 
+func promptOptions(b bill) {
+	reader := bufio.NewReader(os.Stdin)
+
+	opt, _ := getInput("choose option (a - add item, s - save bill, t - add tip): ", reader)
+	fmt.Println(opt)
+}
+
 func main() {
 
 	myBill := createBill()
 
-	fmt.Println(myBill)
+	promptOptions(myBill)
 
 }
