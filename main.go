@@ -11,6 +11,12 @@ func main() {
 
 	myBill := newBill("osamede's bill")
 
+	myBill.updateTip(10)
+	myBill.addItems("sweet pie", 1000)
+	myBill.addItems("pie", 10)
+	myBill.addItems("onion soup", 100)
+	myBill.addItems("cofee", 5)
+
 	fmt.Println(myBill.format())
 
 }

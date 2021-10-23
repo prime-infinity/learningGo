@@ -17,7 +17,7 @@ func newBill(name string) bill {
 
 	b := bill{
 		name:   name,
-		items:  map[string]float64{"pie": 5.99, "cake": 3.94},
+		items:  map[string]float64{},
 		tip:    0,
 		status: true,
 	}
@@ -27,7 +27,7 @@ func newBill(name string) bill {
 }
 
 //a custom function that applies only to our cutsom type. #receiver functions
-func (b bill) format() string {
+func (b *bill) format() string {
 	fs := "Biill breakdown: \n"
 
 	var total float64 = 0
@@ -37,9 +37,29 @@ func (b bill) format() string {
 		total += v
 	}
 
+	//add tip
+	fs += fmt.Sprintf("%-25v ... $%v \n", "tip:", b.tip)
+
 	//total
-	fs += fmt.Sprintf("%-25v ...$%0.2f", "total:", total)
+	fs += fmt.Sprintf("%-25v ...$%0.2f", "total:", total+b.tip)
 	return fs
 }
 
 //the above functions should be implemented again using known methods
+
+//function to update tip
+/*func (b bill) updateTip(t float64) {
+
+	b.tip = t //this wil not work cus the copy is updated, not the actual its
+}*/
+
+func (b *bill) updateTip(t float64) {
+
+	b.tip = t
+
+}
+
+//function to add items to bill struct
+func (b *bill) addItems(name string, price float64) {
+	b.items[name] = price
+}
